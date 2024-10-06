@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Rogue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: url('https://digifycdn.com/media/item_images/IMG_20241003_235247_765.jpg?x-img=v1/optimize,q_95/resize,h_500,w_500,force_true') no-repeat center/cover;
+            margin: 20px auto;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .box {
+            background-color: black;
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px auto;
+            width: 300px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .box:hover {
+            background-color: gray;
+        }
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .black-circle {
+            background-color: black;
+        }
+        .white-circle {
+            background-color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="title">Community Rogue</div>
+    <div class="subtitle">RougeTeam</div>
+    
+    <div class="box" onclick="window.open('https://t.me/Rogue_Team', '_blank')">Rogue Team</div>
+    <div class="box" onclick="window.open('https://t.me/Rogue_Middle', '_blank')">Middle Rogue</div>
+    <div class="box" onclick="window.open('https://t.me/RogueCollection', '_blank')">RogueCollection</div>
+    <div class="box" onclick="window.open('https://t.me/Rogue_Learn', '_blank')">Rogue_Learn</div>
+    
+    <div class="theme-toggle">
+        <div class="circle black-circle" onclick="toggleTheme('black')"></div>
+        <div class="circle white-circle" onclick="toggleTheme('white')"></div>
+    </div>
+
+    <script>
+        let currentTheme = 'white';
+
+        function toggleTheme(theme) {
+            currentTheme = theme;
+            document.body.style.backgroundColor = theme === 'black' ? 'black' : 'white';
+            document.body.style.color = theme === 'black' ? 'white' : 'black';
+            const boxes = document.querySelectorAll('.box');
+            boxes.forEach(box => {
+                box.style.backgroundColor = theme === 'black' ? 'white' : 'black';
+                box.style.color = theme === 'black' ? 'black' : 'white';
+            });
+        }
+    </script>
+</body>
+</html>
